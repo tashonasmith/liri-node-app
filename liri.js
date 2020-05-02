@@ -1,7 +1,8 @@
-//require("dotenv").config();
+require(".env").config();
 
-// var keys = require("./keys.js");
-// var spotify = new Spotify(keys.spotify);
+var keys = require("./keys.js");
+var Spotify = require('node-spotify-api');
+var spotify = new Spotify(keys.spotify);
 
 //require jQuery and jsdom
 var jsdom = require("jsdom");
@@ -36,7 +37,17 @@ if (process.argv[2] === "concert-this") {
         };
     });
 
-};
+} else if (process.argv[2] === "spotify-this-song") {
+    var track = dataArr.join(" ");
+
+    spotify.search({ type: 'track', query: track }, function(err, data) {
+        if (err) {
+          return console.log('Error occurred: ' + err);
+        }
+       
+      console.log(data); 
+      });
+}
 
 
 
