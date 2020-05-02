@@ -19,6 +19,7 @@
   "homepage": "https://github.com/tashonasmith/liri-node-app#readme",
   "dependencies": {
     "jquery": "^3.5.0",
-    "jsdom": "^16.2.2"
+    "jsdom": "^16.2.2",
+    "moment": "^2.25.1"
   }
 }

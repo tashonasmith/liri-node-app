@@ -12,22 +12,31 @@ global.document = document;
 
 var $ = jQuery = require('jquery')(window);
 
+var moment = require('moment');
+
 dataArr = process.argv.slice(3);
-//var searchTerm = dataArr.join(" ");
 
 if (process.argv[2] === "concert-this") {
-    var artist = dataArr.join("+");
+    var artist = dataArr.join(" ");
     queryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response) {
-        console.log(response);
-        //console.log("Name of venue: " + response.id[0])
-    })
+        //console.log(response);
+        for (i = 0; i < response.length; i++) {
+            console.log("Artist: " + artist);
+            console.log("Name of Venue: " + response[i].venue.name);
+            console.log("Venue Location: " + response[i].venue.city);
+            var eventDate = moment(response[i].datetime).format("MM/DD/YYYY");
+            console.log("Date of the Event: " + eventDate);
+            console.log("---------------------------------------------------");
+            
+        };
+    });
 
-}
+};
 
 
 
