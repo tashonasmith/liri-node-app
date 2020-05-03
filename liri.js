@@ -1,4 +1,4 @@
-require(".env").config();
+require("dotenv").config();
 
 var keys = require("./keys.js");
 var Spotify = require('node-spotify-api');
@@ -38,15 +38,30 @@ if (process.argv[2] === "concert-this") {
     });
 
 } else if (process.argv[2] === "spotify-this-song") {
-    var track = dataArr.join(" ");
-
-    spotify.search({ type: 'track', query: track }, function(err, data) {
-        if (err) {
-          return console.log('Error occurred: ' + err);
-        }
-       
-      console.log(data); 
+    if (dataArr === []) {
+       console.log("---------------------------------");
+       console.log("Artist(s): Ace of Base");
+       console.log("Song Name: The Sign");
+       console.log("Spotify Preview Link: https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE" );
+       console.log("Album: The Sign");
+       console.log("---------------------------------");
+    } else {
+      var track = dataArr.join(" ");
+      spotify.search({ type: 'track', query: track, limit: 1 }, function(err, data) {
+          if (err) {
+            return console.log('Error occurred: ' + err);
+          } 
+      
+        //console.log(data.tracks.items[0]);  
+        console.log("--------------------------------------------------")
+        console.log("Artist(s): " + data.tracks.items[0].album.artists[0].name); 
+        console.log("Song Name: " + data.tracks.items[0].name);
+        console.log("Spotify Preview Link: " + data.tracks.items[0].external_urls.spotify);
+        console.log("Album: " + data.tracks.items[0].album.name);
+        console.log("--------------------------------------------------")
       });
+
+    };
 }
 
 
