@@ -1,14 +1,4 @@
 --------------------------------------------------
-Lady Gaga
-Poker Face
-https://open.spotify.com/track/5R8dQOPq8haW94K7mgERlO
-The Fame
-----------------------------------------------------------------------------------------------------
-Ciara
-Level Up
-https://open.spotify.com/track/5ubwXXOsH9bUhZsQ0Cybha
-Level Up
-----------------------------------------------------------------------------------------------------
 Titanic
 1997
 7.8
@@ -18,12 +8,17 @@ English, Swedish, Italian
 A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.
 Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates
 ----------------------------------------------------------------------------------------------------
-Zombieland
-2009
+Lady Gaga
+Poker Face
+https://open.spotify.com/track/5R8dQOPq8haW94K7mgERlO
+The Fame
+----------------------------------------------------------------------------------------------------
+28 Days Later...
+2002
 7.6
-90%
-USA
-English
-A shy student trying to reach his family in Ohio, a gun-toting tough guy trying to find the last Twinkie, and a pair of sisters trying to get to an amusement park join forces to travel across a zombie-filled America.
-Jesse Eisenberg, Woody Harrelson, Emma Stone, Abigail Breslin
+87%
+UK, Spain
+English, Spanish
+Four weeks after a mysterious, incurable virus spreads throughout the UK, a handful of survivors try to find sanctuary.
+Alex Palmer, Bindu De Stoppani, Jukka Hiltunen, David Schneider
 --------------------------------------------------
