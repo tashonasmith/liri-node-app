@@ -38,7 +38,7 @@ if (process.argv[2] === "concert-this") {
             console.log("Date of the Event: " + eventDate);
             console.log("---------------------------------------------------");
             
-        };
+        }
     });
 
 } else if (process.argv[2] === "spotify-this-song") {
@@ -56,13 +56,27 @@ if (process.argv[2] === "concert-this") {
             return console.log('Error occurred: ' + err);
           } 
       
-        //console.log(data.tracks.items[0]);  
-        console.log("--------------------------------------------------")
-        console.log("Artist(s): " + data.tracks.items[0].album.artists[0].name); 
-        console.log("Song Name: " + data.tracks.items[0].name);
-        console.log("Spotify Preview Link: " + data.tracks.items[0].external_urls.spotify);
-        console.log("Album: " + data.tracks.items[0].album.name);
-        console.log("--------------------------------------------------")
+          //console.log(data.tracks.items[0]);  
+          console.log("--------------------------------------------------")
+          console.log("Artist(s): " + data.tracks.items[0].album.artists[0].name); 
+          console.log("Song Name: " + data.tracks.items[0].name);
+          console.log("Spotify Preview Link: " + data.tracks.items[0].external_urls.spotify);
+          console.log("Album: " + data.tracks.items[0].album.name);
+          console.log("--------------------------------------------------")
+
+          fs.appendFile("log.txt", "--------------------------------------------------" + "\r\n" + data.tracks.items[0].album.artists[0].name + "\r\n" + data.tracks.items[0].name + "\r\n" + data.tracks.items[0].external_urls.spotify + "\r\n" + data.tracks.items[0].album.name + "\r\n" + "--------------------------------------------------", function(err) {
+
+            // If an error was experienced we will log it.
+            if (err) {
+              console.log(err);
+            }
+          
+            // If no error is experienced, we'll log the phrase "Content Added" to our node console.
+            else {
+              console.log("Song info has been added to log!");
+            }
+          
+          });
       });
 
     };
@@ -83,6 +97,20 @@ if (process.argv[2] === "concert-this") {
           console.log("Plot: " + response.data.Plot);
           console.log("Starring: " + response.data.Actors);
           console.log("-----------------------------------------------------------");
+
+          fs.appendFile("log.txt", "--------------------------------------------------" + "\r\n" + response.data.Title + "\r\n" + response.data.Year + "\r\n" + response.data.imdbRating + "\r\n" + response.data.Ratings[1].Value + "\r\n" + response.data.Country + "\r\n" + response.data.Language + "\r\n" + response.data.Plot + "\r\n" + response.data.Actors + "\r\n" + "--------------------------------------------------", function(err) {
+
+            // If an error was experienced we will log it.
+            if (err) {
+              console.log(err);
+            }
+          
+            // If no error is experienced, we'll log the phrase "Content Added" to our node console.
+            else {
+              console.log("Movie info has been added to log!");
+            }
+          
+          });
         })
         .catch(function(error) {
             if (error.response) {
