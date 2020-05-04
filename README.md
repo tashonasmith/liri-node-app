@@ -20,4 +20,4 @@ Other npm packages used: jsdom, jQuery, moment, and fs.
 
 5. `concert-this` output will log to the terminal, `spotify-this-song` and `movie-this` output will log to both the terminal and log.txt.
 
-6. Here is a YouTube link to a video of LIRI in action! 
+6. Here is a YouTube link to a video of my LIRI application in action! [Link to YouTube](https://youtu.be/PPNAZ0Ulxkk)
