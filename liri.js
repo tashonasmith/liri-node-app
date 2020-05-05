@@ -4,6 +4,7 @@ var keys = require("./keys.js");
 var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
 
+
 //require jQuery and jsdom
 var jsdom = require("jsdom");
 const { JSDOM } = jsdom;
@@ -19,7 +20,10 @@ var axios = require("axios");
 
 var fs = require('file-system')
 
-dataArr = process.argv.slice(3);
+var searchType = process.argv[2];
+var dataArr = process.argv.slice(3);
+
+
 
 if (process.argv[2] === "concert-this") {
     var artist = dataArr.join(" ");
@@ -83,6 +87,10 @@ if (process.argv[2] === "concert-this") {
 } else if (process.argv[2] === "movie-this") {
     var movie = dataArr.join(" ")
     var queryUrl = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+
+    // if (!movie) {
+    //   movie = "Mr. Nobody"
+    // }
 
     axios.get(queryUrl).then(
         function(response) {
